@@ -1,11 +1,16 @@
-import Banner from "../../componentes/Banner";
+import Post from "componentes/Post";
+import styles from './Inicio.module.css'
+import posts from 'json/posts.json'
 
-export default function Inicio() {
+export default function Inicio(post) {
     return (
-        <main>
-            <Banner/>
-        <div></div>
-        </main>
+       
+        <ul className={styles.posts}>
+            {posts.map((posts)=>(
+                <li key={posts.id}><Post post={posts}/></li>
+            ))}
+
+        </ul>
         
     );
 }
